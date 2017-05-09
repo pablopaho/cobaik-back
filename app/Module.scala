@@ -1,6 +1,8 @@
-import com.google.inject.AbstractModule
 import java.time.Clock
+import co.com.akku.bikes.services.BikesQueriesServicesImpl
+import co.com.akku.bikes.services.BikesQueriesServices
 
+import com.google.inject.AbstractModule
 import services.{ApplicationTimer, AtomicCounter, Counter}
 
 /**
@@ -23,6 +25,9 @@ class Module extends AbstractModule {
     bind(classOf[ApplicationTimer]).asEagerSingleton()
     // Set AtomicCounter as the implementation for Counter.
     bind(classOf[Counter]).to(classOf[AtomicCounter])
+
+    bind(classOf[BikesQueriesServices]).to(classOf[BikesQueriesServicesImpl])
+ 
   }
 
 }
