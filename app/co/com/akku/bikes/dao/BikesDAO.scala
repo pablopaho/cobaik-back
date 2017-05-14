@@ -1,6 +1,9 @@
 package co.com.akku.bikes.dao
-//https://github.com/playframework/play-slick/tree/master/samples/basic/conf
+
+import scala.concurrent.{Future}
+import co.com.akku.bikes.models.Bike
 
 trait BikesDAO {
-  def getBikes(): Seq[String]
+  def getBikes(): Future[Seq[Bike]]
+  def insertBike(bike: Bike): Future[Unit]
 }

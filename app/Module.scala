@@ -1,9 +1,11 @@
 import java.time.Clock
-import co.com.akku.bikes.services.BikesQueriesServicesImpl
-import co.com.akku.bikes.services.BikesQueriesServices
+import co.com.akku.bikes.services.{BikesQueriesServices,BikesQueriesServicesImpl}
+import co.com.akku.bikes.dao.{BikesDAO, BikesDAOImpl}
 
 import com.google.inject.AbstractModule
 import services.{ApplicationTimer, AtomicCounter, Counter}
+import play.api.db.slick.DatabaseConfigProvider
+
 
 /**
  * This class is a Guice module that tells Guice how to bind several
@@ -27,7 +29,6 @@ class Module extends AbstractModule {
     bind(classOf[Counter]).to(classOf[AtomicCounter])
 
     bind(classOf[BikesQueriesServices]).to(classOf[BikesQueriesServicesImpl])
- 
-  }
-
+    bind(classOf[BikesDAO]).to(classOf[BikesDAOImpl])
+   }
 }

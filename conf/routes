@@ -14,3 +14,5 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 # Bikes
 GET     /bikes                      co.com.akku.bikes.BikesController.bikes
+
+# POST    /insert/bike                co.com.akku.bikes.BikesController.insertBike
