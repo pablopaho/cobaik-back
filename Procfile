@@ -1,0 +1,2 @@
+web: target/universal/stage/bin/cobaik-dev-backend -Dhttp.port=${PORT} -Dconfig.resource=$CONFIG_FILE
+console: target/universal/stage/bin/cobaik-dev-backend -main scala.tools.nsc.MainGenericRunner -usejavacp

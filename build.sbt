@@ -1,4 +1,4 @@
-name := """play-scala"""
+name := """cobaik-backend"""
 
 version := "1.0-SNAPSHOT"
 
