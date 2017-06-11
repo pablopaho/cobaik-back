@@ -1,6 +1,6 @@
 # --- !Ups
 
-create table "bikes" ("name" VARCHAR NOT NULL PRIMARY KEY,"reference" VARCHAR NOT NULL);
+create table "bikes" ("id" SERIAL PRIMARY KEY,"name" VARCHAR NOT NULL,"reference" VARCHAR NOT NULL);
 
 # --- !Downs
 
