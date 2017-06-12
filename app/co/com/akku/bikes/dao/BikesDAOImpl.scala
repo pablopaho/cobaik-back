@@ -22,9 +22,10 @@ class BikesDAOImpl @Inject() (protected val dbConfigProvider: DatabaseConfigProv
   def insertBike(bike: Bike): Future[Unit] = db.run(Bikes += bike).map { _ => () }
 
   private class BikesTable(tag: Tag) extends Table[Bike](tag, "bikes") {
-    def name = column[String]("name", O.PrimaryKey)
+    def id = column[Int]("id", O.PrimaryKey)
+    def name = column[String]("name")
     def reference = column[String]("reference")
 
-    def * = (name, reference) <> (Bike.tupled, Bike.unapply)
+    def * = (id, name, reference) <> (Bike.tupled, Bike.unapply)
   }
 }
