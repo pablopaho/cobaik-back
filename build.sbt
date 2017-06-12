@@ -14,4 +14,5 @@ libraryDependencies += "com.typesafe.slick" %% "slick" % "3.2.0"
 libraryDependencies += "com.typesafe.play" %% "play-slick" % "2.1.0"
 libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "2.1.0"
 libraryDependencies += "com.h2database" % "h2" % "1.4.191"
-libraryDependencies += "org.postgresql" % "postgresql" % "9.3-1100-jdbc41"
+libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1206-jdbc42"
+libraryDependencies += evolutions
