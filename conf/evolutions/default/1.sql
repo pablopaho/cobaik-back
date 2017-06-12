@@ -4,5 +4,5 @@ create table "bikes" ("id" SERIAL PRIMARY KEY,"name" VARCHAR NOT NULL,"reference
 
 # --- !Downs
 
-drop table "bikes";
+drop table bikes;
 
