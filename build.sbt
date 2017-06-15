@@ -20,3 +20,7 @@ libraryDependencies += "com.mohiva" %% "play-silhouette-password-bcrypt" % "4.0.
 libraryDependencies += "com.mohiva" %% "play-silhouette-persistence" % "4.0.0"
 libraryDependencies += "com.mohiva" %% "play-silhouette-crypto-jca" % "4.0.0"
 libraryDependencies += "com.mohiva" %% "play-silhouette-testkit" % "4.0.0" % "test"
+libraryDependencies += "org.apache.httpcomponents" % "httpclient" % "4.5.2"
+libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.1.3"
+libraryDependencies += "net.codingwell" %% "scala-guice" % "4.0.1"
+libraryDependencies += "com.iheart" %% "ficus" % "1.2.6"
