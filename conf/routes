@@ -7,7 +7,17 @@ GET     /bikes                      co.com.akku.bikes.BikesController.bikes
 POST    /insert/bike                co.com.akku.bikes.BikesController.insertBike
 
 #Silhouette
-OPTIONS /*path                                                                  controllers.ApplicationController.options(path)
+OPTIONS /*path                                                                  co.com.akku.controllers.ApplicationController.options(path)
 
-GET     /api/v1/authenticate/:provider                                          co.com.wesurance.users.silhouette.SocialAuthController.authenticate(provider)
-POST    /api/v1/authenticate/:provider                                          co.com.wesurance.users.silhouette.SocialAuthController.authenticate(provider)
+GET     /api/v1/authenticate/:provider                                          co.com.akku.users.silhouette.SocialAuthController.authenticate(provider)
+POST    /api/v1/authenticate/:provider                                          co.com.akku.users.silhouette.SocialAuthController.authenticate(provider)
+
+
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+#Add a comment to this line
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message

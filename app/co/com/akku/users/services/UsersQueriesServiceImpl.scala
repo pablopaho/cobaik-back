@@ -6,7 +6,6 @@ import scala.concurrent.Future
 
 import co.com.akku.users.json.objects.GoogleContact
 import co.com.akku.users.models.{Provider, User}
-import co.com.akku.users.services.UsersQueriesService
 
 class UsersQueriesServiceImpl extends UsersQueriesService {
 

@@ -8,3 +8,4 @@ tmp
 dist
 .ensime
 .ensime_cache
+.idea
