@@ -10,3 +10,6 @@ dist
 .ensime_cache
 /.idea
 /*.iml
+/.idea_modules
+/.classpath
+/.project
