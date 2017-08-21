@@ -4,6 +4,18 @@
 
 This is a starter application that shows how Play works.  Please see the documentation at https://www.playframework.com/documentation/latest/Home for more details.
 
+## Config DB
+
+```bash
+sudo su - postgres
+psql
+postgres=# CREATE DATABASE "test-db";
+postgres=# \c "test-db";
+wesurance-db=# create user test with password 'test2017';
+wesurance-db=# GRANT ALL PRIVILEGES ON DATABASE "test-db" to test;
+```
+
+
 ## Running
 
 Run this using [sbt](http://www.scala-sbt.org/).  If you downloaded this project from http://www.playframework.com/download then you'll find a prepackaged version of sbt in the project directory:
@@ -55,3 +67,4 @@ There are several demonstration files available in this template.
 - ExampleFilter.scala
 
   A simple filter that adds a header to every response.
+
