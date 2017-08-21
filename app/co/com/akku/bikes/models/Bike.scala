@@ -1,3 +1,3 @@
 package co.com.akku.bikes.models
 
-case class Bike(name: String, reference: String)
+case class Bike(id: Int, name: String, reference: String)
