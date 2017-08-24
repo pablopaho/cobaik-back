@@ -1,5 +1,6 @@
 import java.time.Clock
 import co.com.akku.bikes.services.{BikesQueriesServices,BikesQueriesServicesImpl}
+import co.com.akku.contact.services.{ContactCommandsServices, ContactCommandsServicesImpl}
 import co.com.akku.bikes.dao.{BikesDAO, BikesDAOImpl}
 
 import com.google.inject.AbstractModule
@@ -30,5 +31,7 @@ class Module extends AbstractModule {
 
     bind(classOf[BikesQueriesServices]).to(classOf[BikesQueriesServicesImpl])
     bind(classOf[BikesDAO]).to(classOf[BikesDAOImpl])
+
+    bind(classOf[ContactCommandsServices]).to(classOf[ContactCommandsServicesImpl])
    }
 }
