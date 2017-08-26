@@ -16,7 +16,7 @@ class ContactCommandsServicesImpl @Inject()(bikesDao: BikesDAO, mailerService: M
   }
 
   def sendContactv2(contact: Contact): String = {
-    println(s"si fue")
+    println(s"si fue :$contact")
     "xyztest"
   }
 
