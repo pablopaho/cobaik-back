@@ -1,4 +1,4 @@
-package co.com.akku.contact.services
+package co.com.akku.communications.services
 
 import play.api.libs.mailer._
 import java.io.File
