@@ -6,6 +6,7 @@ import co.com.akku.bikes.dao.{BikesDAO, BikesDAOImpl}
 import com.google.inject.AbstractModule
 import services.{ApplicationTimer, AtomicCounter, Counter}
 import play.api.db.slick.DatabaseConfigProvider
+import net.codingwell.scalaguice.ScalaModule
 
 
 /**
@@ -18,7 +19,7 @@ import play.api.db.slick.DatabaseConfigProvider
  * adding `play.modules.enabled` settings to the `application.conf`
  * configuration file.
  */
-class Module extends AbstractModule {
+class Module extends AbstractModule with ScalaModule {
 
   override def configure() = {
     // Use the system clock as the default implementation of Clock

@@ -17,5 +17,6 @@ libraryDependencies += "com.h2database" % "h2" % "1.4.191"
 libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1206-jdbc42"
 libraryDependencies += "com.typesafe.play" %% "play-mailer" % "6.0.1"
 libraryDependencies += "com.typesafe.play" %% "play-mailer-guice" % "6.0.1"
+libraryDependencies += "net.codingwell" %% "scala-guice" % "4.1.0"
 libraryDependencies += evolutions
 libraryDependencies += filters
