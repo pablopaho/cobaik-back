@@ -15,5 +15,7 @@ libraryDependencies += "com.typesafe.play" %% "play-slick" % "2.1.0"
 libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "2.1.0"
 libraryDependencies += "com.h2database" % "h2" % "1.4.191"
 libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1206-jdbc42"
+libraryDependencies += "com.typesafe.play" %% "play-mailer" % "6.0.1"
+libraryDependencies += "com.typesafe.play" %% "play-mailer-guice" % "6.0.1"
 libraryDependencies += evolutions
 libraryDependencies += filters

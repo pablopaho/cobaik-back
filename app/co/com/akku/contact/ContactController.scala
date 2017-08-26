@@ -13,7 +13,7 @@ import co.com.akku.contact.models.Contact
 class ContactController @Inject() (contactCommandsServices: ContactCommandsServices)(implicit executionContext: ExecutionContext) extends Controller {
 
   def sendContact = Action { req =>
-
+    println(s"en sendContact")
     contactCommandsServices.sendContact()
     Ok("Happy")
 
