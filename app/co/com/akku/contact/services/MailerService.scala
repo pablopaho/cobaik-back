@@ -12,7 +12,7 @@ class MailerService @Inject() (mailerClient: MailerClient) {
     val email = Email(
       "Simple email",
       "Mister FROM <pablopaho@gmail.com>",
-      Seq("Miss TO <jdestradap@gmail.com>"),
+      Seq("Miss TO <info@cobaik.com>"),
       // adds attachment
       attachments = Seq(),
       // sends text, HTML or both...

@@ -12,18 +12,10 @@ import co.com.akku.contact.models.Contact
 @Singleton
 class ContactController @Inject() (contactCommandsServices: ContactCommandsServices)(implicit executionContext: ExecutionContext) extends Controller {
 
-  def sendContact = Action { req =>
-    println(s"en sendContact")
-    contactCommandsServices.sendContact()
-    Ok("Happy")
-
-  }
-
-  def sendContactv2: Action[Contact] = Action(parse.json[Contact]) { req =>
-
+  def sendContact: Action[Contact] = Action(parse.json[Contact]) { req =>
     val contact: Contact = req.body
     println(s"contact:$contact")
-    contactCommandsServices.sendContactv2(contact)
+    contactCommandsServices.sendContact(contact)
     Ok("Happy")
 
   }
