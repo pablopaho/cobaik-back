@@ -10,7 +10,7 @@ import javax.inject._
 class ContactCommandsServicesImpl @Inject()(mailerService: MailerService) extends ContactCommandsServices {
 
   def sendContact(contact: Contact): String = {
-    mailerService.sendEmail
+    mailerService.sendContact(contact)
   }
 
 }
