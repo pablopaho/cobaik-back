@@ -3,8 +3,6 @@ package co.com.akku.communications.services
 import co.com.akku.contact.models.Contact
 
 import play.api.libs.mailer._
-import java.io.File
-import org.apache.commons.mail.EmailAttachment
 import javax.inject.Inject
 
 class MailerService @Inject() (mailerClient: MailerClient) {
@@ -14,6 +12,7 @@ class MailerService @Inject() (mailerClient: MailerClient) {
   }
 
 
+  //todo: llevar html a la carpeta views
   def sendContact(contact: Contact) : String = {
     val cid = contact.fullname
     val email = Email(
@@ -41,9 +40,7 @@ class MailerService @Inject() (mailerClient: MailerClient) {
                            </body>
                           </html>""")
     )
-
     sendEmail(email)
-
   }
 
 }
