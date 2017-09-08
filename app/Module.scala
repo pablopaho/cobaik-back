@@ -4,7 +4,6 @@ import co.com.akku.contact.services.{ContactCommandsServices, ContactCommandsSer
 import co.com.akku.bikes.dao.{BikesDAO, BikesDAOImpl}
 
 import com.google.inject.AbstractModule
-import play.api.db.slick.DatabaseConfigProvider
 import net.codingwell.scalaguice.ScalaModule
 
 
