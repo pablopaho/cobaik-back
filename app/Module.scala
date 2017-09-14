@@ -8,7 +8,6 @@ import services.{ApplicationTimer, AtomicCounter, Counter}
 
 import com.google.inject.AbstractModule
 import net.codingwell.scalaguice.ScalaModule
-import play.api.db.slick.DatabaseConfigProvider
 import java.time.Clock
 
 /**
