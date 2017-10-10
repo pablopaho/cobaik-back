@@ -1,10 +1,11 @@
-import java.time.Clock
+
 import co.com.akku.bikes.services.{BikesQueriesServices,BikesQueriesServicesImpl}
+import co.com.akku.contact.services.{ContactCommandsServices, ContactCommandsServicesImpl}
 import co.com.akku.bikes.dao.{BikesDAO, BikesDAOImpl}
+import co.com.akku.communications.services.{MailerService, MailerServiceImpl}
 
 import com.google.inject.AbstractModule
-import services.{ApplicationTimer, AtomicCounter, Counter}
-import play.api.db.slick.DatabaseConfigProvider
+import net.codingwell.scalaguice.ScalaModule
 
 
 /**
@@ -17,18 +18,15 @@ import play.api.db.slick.DatabaseConfigProvider
  * adding `play.modules.enabled` settings to the `application.conf`
  * configuration file.
  */
-class Module extends AbstractModule {
+class Module extends AbstractModule with ScalaModule {
 
   override def configure() = {
-    // Use the system clock as the default implementation of Clock
-    bind(classOf[Clock]).toInstance(Clock.systemDefaultZone)
-    // Ask Guice to create an instance of ApplicationTimer when the
-    // application starts.
-    bind(classOf[ApplicationTimer]).asEagerSingleton()
-    // Set AtomicCounter as the implementation for Counter.
-    bind(classOf[Counter]).to(classOf[AtomicCounter])
 
     bind(classOf[BikesQueriesServices]).to(classOf[BikesQueriesServicesImpl])
     bind(classOf[BikesDAO]).to(classOf[BikesDAOImpl])
+
+    bind(classOf[ContactCommandsServices]).to(classOf[ContactCommandsServicesImpl])
+    bind(classOf[MailerService]).to(classOf[MailerServiceImpl])
+
    }
 }

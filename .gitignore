@@ -9,3 +9,6 @@ dist
 .ensime
 .ensime_cache
 .idea
+.idea/*
+.idea/workspace.xml
+
