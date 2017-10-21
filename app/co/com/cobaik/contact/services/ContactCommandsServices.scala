@@ -1,6 +1,6 @@
-package co.com.akku.contact.services
+package co.com.cobaik.contact.services
 
-import co.com.akku.contact.models.Contact
+import co.com.cobaik.contact.models.Contact
 import scala.concurrent.Future
 
 trait ContactCommandsServices {

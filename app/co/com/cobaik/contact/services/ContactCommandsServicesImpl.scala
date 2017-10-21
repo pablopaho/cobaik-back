@@ -1,7 +1,7 @@
-package co.com.akku.contact.services
+package co.com.cobaik.contact.services
 
-import co.com.akku.contact.models.Contact
-import co.com.akku.communications.services.MailerService
+import co.com.cobaik.contact.models.Contact
+import co.com.cobaik.communications.services.MailerService
 
 import javax.inject._
 import scala.concurrent.Future

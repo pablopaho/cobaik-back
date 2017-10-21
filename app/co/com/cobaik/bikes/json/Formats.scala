@@ -1,7 +1,7 @@
 package app.co.com.akku.bikes.json
 
 import play.api.libs.json.Json
-import co.com.akku.bikes.models.Bike
+import co.com.cobaik.bikes.models.Bike
 
 
 object Formats {

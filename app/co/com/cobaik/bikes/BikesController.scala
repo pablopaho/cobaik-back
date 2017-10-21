@@ -1,8 +1,8 @@
-package co.com.akku.bikes
+package co.com.cobaik.bikes
 
-import co.com.akku.bikes.services.BikesQueriesServices
+import co.com.cobaik.bikes.services.BikesQueriesServices
 import app.co.com.akku.bikes.json.Formats._
-import co.com.akku.bikes.models.Bike
+import co.com.cobaik.bikes.models.Bike
 
 import javax.inject._
 import play.api.mvc._

@@ -3,8 +3,8 @@
 # ~~~~
 
 # Bikes
-GET     /bikes                      co.com.akku.bikes.BikesController.bikes
-POST    /insert/bike                co.com.akku.bikes.BikesController.insertBike
+GET     /bikes                      co.com.cobaik.bikes.BikesController.bikes
+POST    /insert/bike                co.com.cobaik.bikes.BikesController.insertBike
 
 # Contact
-POST   /contact                    co.com.akku.contact.ContactController.sendContact
+POST   /contact                    co.com.cobaik.contact.ContactController.sendContact

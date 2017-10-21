@@ -1,8 +1,8 @@
 
-import co.com.akku.bikes.services.{BikesQueriesServices,BikesQueriesServicesImpl}
-import co.com.akku.contact.services.{ContactCommandsServices, ContactCommandsServicesImpl}
-import co.com.akku.bikes.dao.{BikesDAO, BikesDAOImpl}
-import co.com.akku.communications.services.{MailerService, MailerServiceImpl}
+import co.com.cobaik.bikes.services.{BikesQueriesServices,BikesQueriesServicesImpl}
+import co.com.cobaik.contact.services.{ContactCommandsServices, ContactCommandsServicesImpl}
+import co.com.cobaik.bikes.dao.{BikesDAO, BikesDAOImpl}
+import co.com.cobaik.communications.services.{MailerService, MailerServiceImpl}
 
 import com.google.inject.AbstractModule
 import net.codingwell.scalaguice.ScalaModule

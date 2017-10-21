@@ -1,7 +1,7 @@
-package co.com.akku.bikes.services
+package co.com.cobaik.bikes.services
 
-import co.com.akku.bikes.models.Bike
-import co.com.akku.bikes.dao.BikesDAO
+import co.com.cobaik.bikes.models.Bike
+import co.com.cobaik.bikes.dao.BikesDAO
 
 import javax.inject._
 import scala.concurrent.{Future}

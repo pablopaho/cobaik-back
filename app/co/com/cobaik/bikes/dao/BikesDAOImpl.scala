@@ -1,9 +1,9 @@
-package co.com.akku.bikes.dao
+package co.com.cobaik.bikes.dao
 
 import scala.concurrent.{ExecutionContext,Future}
 import javax.inject.Inject
 
-import co.com.akku.bikes.models.Bike
+import co.com.cobaik.bikes.models.Bike
 import play.api.db.slick.DatabaseConfigProvider
 import play.api.db.slick.HasDatabaseConfigProvider
 import slick.jdbc.JdbcProfile

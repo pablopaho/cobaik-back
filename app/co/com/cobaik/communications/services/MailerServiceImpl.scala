@@ -1,6 +1,6 @@
-package co.com.akku.communications.services
+package co.com.cobaik.communications.services
 
-import co.com.akku.contact.models.Contact
+import co.com.cobaik.contact.models.Contact
 
 import play.api.libs.mailer._
 import javax.inject.Inject

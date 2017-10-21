@@ -1,8 +1,8 @@
-package co.com.akku.contact
+package co.com.cobaik.contact
 
-import co.com.akku.contact.services.ContactCommandsServices
+import co.com.cobaik.contact.services.ContactCommandsServices
 import app.co.com.akku.contact.json.Formats._
-import co.com.akku.contact.models.Contact
+import co.com.cobaik.contact.models.Contact
 
 import scala.concurrent.ExecutionContext
 import javax.inject._

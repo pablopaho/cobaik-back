@@ -1,7 +1,7 @@
-package co.com.akku.bikes.dao
+package co.com.cobaik.bikes.dao
 
 import scala.concurrent.{Future}
-import co.com.akku.bikes.models.Bike
+import co.com.cobaik.bikes.models.Bike
 
 trait BikesDAO {
   def getBikes(): Future[Seq[Bike]]
