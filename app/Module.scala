@@ -4,9 +4,11 @@ import co.com.akku.contact.services.{ContactCommandsServices, ContactCommandsSer
 import co.com.akku.bikes.dao.{BikesDAO, BikesDAOImpl}
 import co.com.akku.communications.services.{MailerService, MailerServiceImpl}
 
+import services.{ApplicationTimer, AtomicCounter, Counter}
+
 import com.google.inject.AbstractModule
 import net.codingwell.scalaguice.ScalaModule
-
+import java.time.Clock
 
 /**
  * This class is a Guice module that tells Guice how to bind several
@@ -27,6 +29,14 @@ class Module extends AbstractModule with ScalaModule {
 
     bind(classOf[ContactCommandsServices]).to(classOf[ContactCommandsServicesImpl])
     bind(classOf[MailerService]).to(classOf[MailerServiceImpl])
+
+    // Use the system clock as the default implementation of Clock
+    bind(classOf[Clock]).toInstance(Clock.systemDefaultZone)
+    // Ask Guice to create an instance of ApplicationTimer when the
+    // application starts.
+    bind(classOf[ApplicationTimer]).asEagerSingleton()
+    // Set AtomicCounter as the implementation for Counter.
+    bind(classOf[Counter]).to(classOf[AtomicCounter])
 
    }
 }
