@@ -1,4 +1,4 @@
-package co.com.akku.bikes.services
+package co.com.cobaik.bikes.services
 
 import org.scalatestplus.play.{ OneAppPerSuite, PlaySpec }
 import scala.concurrent.Await
