@@ -25,7 +25,8 @@ class BikesDAOImpl @Inject() (protected val dbConfigProvider: DatabaseConfigProv
     def id = column[Int]("id", O.PrimaryKey)
     def name = column[String]("name")
     def reference = column[String]("reference")
+    def categoryId = column[Int]("categoryId")
 
-    def * = (id, name, reference) <> (Bike.tupled, Bike.unapply)
+    def * = (id, name, reference, categoryId) <> (Bike.tupled, Bike.unapply)
   }
 }

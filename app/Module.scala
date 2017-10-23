@@ -1,9 +1,8 @@
 
-import co.com.cobaik.bikes.services.{BikesQueriesServices,BikesQueriesServicesImpl}
-import co.com.cobaik.contact.services.{ContactCommandsServices, ContactCommandsServicesImpl}
+import co.com.cobaik.bikes.services.{BikesQueriesServices, BikesQueriesServicesImpl}
 import co.com.cobaik.bikes.dao.{BikesDAO, BikesDAOImpl}
+import co.com.cobaik.communications.contact.services.{ContactCommandsServices, ContactCommandsServicesImpl}
 import co.com.cobaik.communications.services.{MailerService, MailerServiceImpl}
-
 import com.google.inject.AbstractModule
 import net.codingwell.scalaguice.ScalaModule
 

@@ -1,6 +1,6 @@
 package co.com.cobaik.communications.services
 
-import co.com.cobaik.contact.models.Contact
+import co.com.cobaik.communications.contact.models.Contact
 
 import play.api.libs.mailer._
 import javax.inject.Inject

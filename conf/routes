@@ -7,4 +7,4 @@ GET     /bikes                      co.com.cobaik.bikes.BikesController.bikes
 POST    /insert/bike                co.com.cobaik.bikes.BikesController.insertBike
 
 # Contact
-POST   /contact                    co.com.cobaik.contact.ContactController.sendContact
+POST   /contact                    co.com.cobaik.communications.contact.ContactController.sendContact

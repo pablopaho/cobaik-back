@@ -1,12 +1,13 @@
-package co.com.cobaik.contact
+package co.com.cobaik.communications.contact
 
-import co.com.cobaik.contact.services.ContactCommandsServices
-import app.co.com.akku.contact.json.Formats._
-import co.com.cobaik.contact.models.Contact
+import javax.inject._
+
+import co.com.cobaik.communications.contact.json.Formats._
+import co.com.cobaik.communications.contact.models.Contact
+import co.com.cobaik.communications.contact.services.ContactCommandsServices
+import play.api.mvc._
 
 import scala.concurrent.ExecutionContext
-import javax.inject._
-import play.api.mvc._
 
 
 @Singleton
