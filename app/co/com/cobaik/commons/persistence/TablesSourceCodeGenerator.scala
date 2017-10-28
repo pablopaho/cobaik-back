@@ -66,13 +66,7 @@ class TablesSourceCodeGenerator(m: Model) extends SourceCodeGenerator(m) {
           case "scala.math.BigDecimal"  => "Float"
           case "java.sql.Date"     => "DateTime"
           case "java.sql.Timestamp"     => "DateTime"
-          case _ =>
-            (model.name, model.table.table) match  {
-              case ("params","oauth2_info") =>
-                "Map[String,String]"
-              case _ =>  super.rawType
-
-            }
+          case _ => super.rawType
         }
       }
     }
