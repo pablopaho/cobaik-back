@@ -8,6 +8,7 @@ import slick.util.Logging
 trait CobaikPGProfile extends ExPostgresProfile with PgHStoreSupport with PgDateSupportJoda{
 
   override val api = new API with HStoreImplicits with DateTimeImplicits {
+
     def getDateTimeFormatter(s: String)  = {
       if(s.matches(".*[\\+|\\-][0-9]+$")) if(s.indexOf(".") > 0 ) jodaTzDateTimeFormatter else jodaTzDateTimeFormatter_NoFraction
       else if(s.indexOf(".") > 0 ) jodaDateTimeFormatter else jodaDateTimeFormatter_NoFraction
