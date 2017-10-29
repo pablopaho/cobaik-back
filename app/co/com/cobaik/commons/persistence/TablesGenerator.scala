@@ -1,7 +1,13 @@
 package co.com.cobaik.commons.persistence
 
+import slick.dbio.DBIO
+import slick.jdbc
 import slick.jdbc.PostgresProfile
+import slick.model.Model
+
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.{Await, Future}
+import scala.concurrent.duration._
 
 object TablesGenerator {
   def main(args: Array[String]): Unit = {
@@ -10,25 +16,23 @@ object TablesGenerator {
     val password = "test2017"
     val url = s"jdbc:postgresql://localhost:5432/test-db?user=$username&password=$password"
 
-    val DB = PostgresProfile.backend.Database.forURL(url,driver= "org.postgresql.Driver")
-    val modelAction = PostgresProfile.createModel(Some(PostgresProfile.defaultTables))
-    val modelFuture = DB.run(modelAction)
-    val codegenFuture = modelFuture.map(model => new TablesSourceCodeGenerator(model))
+    val DB: jdbc.PostgresProfile.backend.DatabaseDef = PostgresProfile.backend.Database.forURL(url,driver= "org.postgresql.Driver")
+    val modelAction: DBIO[Model] = PostgresProfile.createModel(Some(PostgresProfile.defaultTables))
+    val modelFuture: Future[Model] = DB.run(modelAction)
 
-    codegenFuture.onSuccess {
-      case codegen => {
-        codegen.writeToFile(
-          "co.com.cobaik.commons.persistence.CobaikPGProfile",
-          "./app/",
-          "co.com.cobaik.commons.persistence.generated",
-          "Tables",
-          "Tables.scala"
-        )
-      }
-    }
+    val codegenFuture: Future[TablesSourceCodeGenerator] = Await.ready(
+      modelFuture.map(model => new TablesSourceCodeGenerator(model)), 20.seconds
+    )
 
-    codegenFuture.onFailure{
-      case e => println(s"ERROR: $e")
-    }
+    val result = Await.ready(
+      codegenFuture.map(_.writeToFile(
+        "co.com.cobaik.commons.persistence.CobaikPGProfile",
+        "/Users/juandiegoestradap/projects/share-bike-back/app/",
+        "co.com.cobaik.commons.persistence.generated",
+        "Tables",
+        "Tables.scala"
+      )),
+      20.seconds
+    )
   }
 }
