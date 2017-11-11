@@ -1,6 +1,4 @@
-package co.com.cobaik.users.owners.models
-
-import co.com.cobaik.bikes.calendar.models.Slot
+package co.com.cobaik.bikes.calendar.models
 
 /**
   * Representa la disponibilidad de una bicicleta dada por un dueño.
