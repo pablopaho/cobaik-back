@@ -1,9 +1,15 @@
 package app.co.com.akku.bikes.json
 
-import play.api.libs.json.Json
+import co.com.cobaik.bikes.json.objects.{BikeDetail, BikeSearchDetail, BikesQuery}
 import co.com.cobaik.bikes.models.Bike
+import play.api.libs.json.{Json, OFormat}
+
 
 
 object Formats {
   implicit val bikeFormat = Json.format[Bike]
+  implicit val bikeSearchDetailFormat = Json.format[BikeSearchDetail]
+  implicit val bikeDetailFormat = Json.format[BikeDetail]
+  implicit val bikesQueryFormat: OFormat[BikesQuery] = Json.format[BikesQuery]
+
 }
