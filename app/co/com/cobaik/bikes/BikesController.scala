@@ -1,12 +1,15 @@
 package co.com.cobaik.bikes
 
 import co.com.cobaik.bikes.services.BikesQueriesServices
+import app.co.com.akku.bikes.location.json.Formats._
+
 import app.co.com.akku.bikes.json.Formats._
 import co.com.cobaik.bikes.models.Bike
 import javax.inject._
-import play.api.libs.json.Json
 
+import play.api.libs.json.Json
 import co.com.cobaik.bikes.json.objects.{BikeDetail, BikeSearchDetail, BikesQuery}
+import co.com.cobaik.bikes.location.models.CobaikLocation
 import play.api.mvc._
 
 import scala.concurrent.{ExecutionContext, Future}
@@ -23,7 +26,7 @@ class BikesController @Inject() (bikesService: BikesQueriesServices)(implicit ex
     bikesService.insertBike(bike).map(_ => Ok)
   }
 
-  def availableBikes(): Action[BikesQuery] = Action.async(parse.json[BikesQuery]) { req =>
+  def availableBikes(): Action[CobaikLocation] = Action.async(parse.json[CobaikLocation]) { req =>
     val _availableBikesF = Future {
       val bikeProperties = Map("property1" -> "property1", "property2" -> "property2")
       List(BikeSearchDetail(bikeId=1,

@@ -5,7 +5,7 @@
 # Bikes
 GET     /bikes                      co.com.cobaik.bikes.BikesController.bikes
 POST    /insert/bike                co.com.cobaik.bikes.BikesController.insertBike
-POST    /available/bikes            co.com.cobaik.bikes.BikesController.availableBikes
+POST    /bikes/available            co.com.cobaik.bikes.BikesController.availableBikes
 GET     /bikes/$id<[0-9]+>          co.com.cobaik.bikes.BikesController.getBikeDetail(id: Int)
 
 
