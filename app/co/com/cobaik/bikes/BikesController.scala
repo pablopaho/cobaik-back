@@ -65,13 +65,15 @@ class BikesController @Inject() (bikesService: BikesQueriesServices)(implicit ex
     val bikeProperties = Map("property1" -> "property1", "property2" -> "property2")
     val _bikeDetailF =
       Future {
-        BikeDetail(bikeId=1,
+        BikeDetail(bike_id=3,
           brand="trek",
           reference="sl1200",
-          categoryId = 1,
-          price = 10,
+          category_description = "Urbana",
+          price = 25000,
           properties = bikeProperties,
-          imageUrl = "https://i.pinimg.com/564x/e7/71/1b/e7711bc974f9fda8d7c231cfb58c1dc5.jpg")
+          image_url = "https://i.pinimg.com/564x/e7/71/1b/e7711bc974f9fda8d7c231cfb58c1dc5.jpg",
+          cobaik_location = CobaikLocation(latitude = 3.4516467F,longitude = -76.5319854F, city_description = "Cali"),
+          description = "Una cuca de bicicleta papa")
       }
     _bikeDetailF.map(result => Ok(Json.toJson(result)))
   }
