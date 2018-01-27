@@ -23,7 +23,7 @@ trait BikesCommandsService {
     * @param properties
     * @return Retorna el id de la bicicleta.
     */
-  def addBikeAccessories(bikeId: Int, properties: Map[String, String], bikeCategory: Category): Future[Int]
+  def addBikeAccessories(bikeId: Int, properties: Map[String, String]): Future[Int]
 
   /**
     *
@@ -36,8 +36,8 @@ trait BikesCommandsService {
   /**
     *
     * @param bikeId
-    * @param pictures
+    * @param content
     * @return
     */
-  def addBikeEngageInfo(bikeId: Int, pictures: List[Array[Byte]]): Future[Int]
+  def addBikeEngageInfo(bikeId: Int, content: String): Future[Int]
 }
