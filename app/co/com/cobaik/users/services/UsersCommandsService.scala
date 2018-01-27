@@ -6,4 +6,5 @@ import scala.concurrent.Future
 
 trait UsersCommandsService {
   def createUser(user: User): Future[Int]
+  def addUserID(userId: Int, IDPhoto: Array[Byte])
 }
