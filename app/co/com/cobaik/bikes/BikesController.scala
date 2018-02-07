@@ -26,37 +26,37 @@ class BikesController @Inject() (bikesService: BikesQueriesServices)(implicit ex
     bikesService.insertBike(bike).map(_ => Ok)
   }
 
-  def availableBikes(): Action[CobaikLocation] = Action.async(parse.json[CobaikLocation]) { req =>
+  //TODO: debe asumir para la busqueda de bicicletas, ademas de la ubicacion, se necesita fecha actual y fecha actual mas 1 dia
+  def getAvailableBikes(): Action[CobaikLocation] = Action.async(parse.json[CobaikLocation]) { req =>
     val bikeProperties  = Map("property1" -> "property1", "property2" -> "property2")
     val availableBikesF = Future {
-        List(BikeSearchDetail(bike_id=1,
-                            brand="trek",
-                            reference="sl1200",
-                            categoryDescription = "Ruta",
-                            price = 15000,
-                            properties = bikeProperties,
-                            image_url = "https://i.pinimg.com/564x/e7/71/1b/e7711bc974f9fda8d7c231cfb58c1dc5.jpg",
-                            cobaikLocation = CobaikLocation(latitude = 6.2530408F,longitude = -75.56457369999998F, cityDescription = "Medellin"),
-                            description = "Una cuca de bicicleta papa"),
-           BikeSearchDetail(bike_id=2,
-                            brand="trek",
-                            reference="sl1200",
-                            categoryDescription = "Montaña",
-                            price = 20000,
-                            properties = bikeProperties,
-                            image_url = "https://i.pinimg.com/564x/e7/71/1b/e7711bc974f9fda8d7c231cfb58c1dc5.jpg",
-                            cobaikLocation = CobaikLocation(latitude = 4.710988599999999F,longitude = -74.072092F, cityDescription = "Bogota"),
-                            description = "Una cuca de bicicleta papa"),
-
-        BikeSearchDetail(bike_id=3,
-                         brand="trek",
-                         reference="sl1200",
-                         categoryDescription = "Urbana",
-                         price = 25000,
-                         properties = bikeProperties,
-                         image_url = "https://i.pinimg.com/564x/e7/71/1b/e7711bc974f9fda8d7c231cfb58c1dc5.jpg",
-                         cobaikLocation = CobaikLocation(latitude = 3.4516467F,longitude = -76.5319854F, cityDescription = "Cali"),
-                         description = "Una cuca de bicicleta papa")
+        List(BikeSearchDetail(id=1,
+                              brand="trek",
+                              reference="sl1200",
+                              categoryDescription = "Ruta",
+                              price = 15000,
+                              properties = bikeProperties,
+                              imageUrl = "https://i.pinimg.com/564x/e7/71/1b/e7711bc974f9fda8d7c231cfb58c1dc5.jpg",
+                              cobaikLocation = CobaikLocation(latitude = 6.2530408F,longitude = -75.56457369999998F, cityDescription = "Medellin"),
+                              description = "Una cuca de bicicleta papa"),
+             BikeSearchDetail(id=2,
+                              brand="Giant",
+                              reference="sl1300",
+                              categoryDescription = "Montaña",
+                              price = 20000,
+                              properties = bikeProperties,
+                              imageUrl = "https://i.pinimg.com/564x/e7/71/1b/e7711bc974f9fda8d7c231cfb58c1dc5.jpg",
+                              cobaikLocation = CobaikLocation(latitude = 4.710988599999999F,longitude = -74.072092F, cityDescription = "Bogota"),
+                              description = "Una cuca de bicicleta papa"),
+             BikeSearchDetail(id=3,
+                              brand="Scott",
+                              reference="sl1200",
+                              categoryDescription = "Urbana",
+                              price = 25000,
+                              properties = bikeProperties,
+                              imageUrl = "https://i.pinimg.com/564x/e7/71/1b/e7711bc974f9fda8d7c231cfb58c1dc5.jpg",
+                              cobaikLocation = CobaikLocation(latitude = 3.4516467F,longitude = -76.5319854F, cityDescription = "Cali"),
+                              description = "Una cuca de bicicleta papa")
         )
     }
     availableBikesF.map(result => Ok(Json.toJson(result)))
