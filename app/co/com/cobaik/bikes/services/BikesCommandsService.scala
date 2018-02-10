@@ -5,7 +5,7 @@ import co.com.cobaik.bikes.location.models.CobaikLocation
 
 import scala.concurrent.Future
 
-trait BikesCommandsService {
+trait BikesCommandsServices {
   def createBikeLocation(ownerId: Int, cobaikLocation: CobaikLocation): Future[Int]
 
   /**

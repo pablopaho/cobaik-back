@@ -8,7 +8,7 @@ POST    /insert/bike                co.com.cobaik.bikes.BikesController.insertBi
 POST    /bikes/available            co.com.cobaik.bikes.BikesController.getAvailableBikes
 GET     /bikes/$id<[0-9]+>          co.com.cobaik.bikes.BikesController.getBikeDetail(id: Int)
 
-
+POST    /bikes                      co.com.cobaik.bikes.BikesController.createBike
 
 # Contact
 POST   /contact                    co.com.cobaik.communications.contact.ContactController.sendContact

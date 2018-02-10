@@ -1,11 +1,9 @@
 
-import co.com.cobaik.bikes.services.{BikesQueriesServices, BikesQueriesServicesImpl}
+import co.com.cobaik.bikes.services.{BikesCommandsServices, BikesCommandsServicesImpl, BikesQueriesServices, BikesQueriesServicesImpl}
 import co.com.cobaik.bikes.dao.{BikesDAO, BikesDAOImpl}
 import co.com.cobaik.communications.contact.services.{ContactCommandsServices, ContactCommandsServicesImpl}
 import co.com.cobaik.communications.services.{MailerService, MailerServiceImpl}
-
 import services.{ApplicationTimer, AtomicCounter, Counter}
-
 import com.google.inject.AbstractModule
 import net.codingwell.scalaguice.ScalaModule
 import java.time.Clock
@@ -25,6 +23,7 @@ class Module extends AbstractModule with ScalaModule {
   override def configure() = {
 
     bind(classOf[BikesQueriesServices]).to(classOf[BikesQueriesServicesImpl])
+    bind(classOf[BikesCommandsServices]).to(classOf[BikesCommandsServicesImpl])
     bind(classOf[BikesDAO]).to(classOf[BikesDAOImpl])
 
     bind(classOf[ContactCommandsServices]).to(classOf[ContactCommandsServicesImpl])
