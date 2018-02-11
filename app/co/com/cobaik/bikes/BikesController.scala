@@ -1,21 +1,21 @@
 package co.com.cobaik.bikes
 
-import co.com.cobaik.bikes.services.BikesQueriesServices
+import co.com.cobaik.bikes.services.{BikesCommandsServices, BikesQueriesServices}
 import app.co.com.akku.bikes.location.json.Formats._
-
 import app.co.com.akku.bikes.json.Formats._
 import co.com.cobaik.bikes.models.Bike
 import javax.inject._
 
 import play.api.libs.json.Json
 import co.com.cobaik.bikes.json.objects.{BikeDetail, BikeSearchDetail, BikesQuery}
+import co.com.cobaik.bikes.location.json.objects.CreateBike
 import co.com.cobaik.bikes.location.models.CobaikLocation
 import play.api.mvc._
 
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class BikesController @Inject() (bikesService: BikesQueriesServices)(implicit executionContext: ExecutionContext) extends Controller {
+class BikesController @Inject()(bikesService: BikesQueriesServices, bikesCommandService: BikesCommandsServices)(implicit executionContext: ExecutionContext) extends Controller {
   def bikes = Action.async {
     val bikes: Future[Seq[Bike]] = bikesService.bikes()
     bikes.map(result => Ok(Json.toJson(result)))
@@ -77,5 +77,19 @@ class BikesController @Inject() (bikesService: BikesQueriesServices)(implicit ex
           description = "Una cuca de bicicleta papa")
       }
     _bikeDetailF.map(result => Ok(Json.toJson(result)))
+  }
+
+
+
+  def createBike: Action[CreateBike] = Action.async(parse.json[CreateBike]) { req =>
+    val bike: CreateBike = req.body
+    //bikesCommandService.createBikeLocation()
+    ???
+  }
+
+  def createBikeAccessories: Action[CreateBike] = Action.async(parse.json[CreateBike]) { req =>
+    val bike: CreateBike = req.body
+    //bikesCommandService.createBikeLocation()
+    ???
   }
 }
