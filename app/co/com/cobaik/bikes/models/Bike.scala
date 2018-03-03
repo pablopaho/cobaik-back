@@ -12,19 +12,22 @@ final case class Frame (id: Int, description: String)
 
 final case class Group (id: Int, description: String)
 
-sealed trait BikeStyle {
-  def style : String
-}
+final case class BikeStyle (id: Int, description: String)
 
-final case class RoadBike() extends BikeStyle {
-  def style = "road"
-}
+//Al trabajar así, el implicit del json genera: bikes/json/Formats.scala:25: No implicit format for co.com.cobaik.bikes.models.BikeStyle available
+// sealed trait BikeStyle {
+//   def style : String
+// }
 
-final case class MountainBike() extends BikeStyle {
-  def style = "mountainBike"
-}
+// final case class RoadBike() extends BikeStyle {
+//   def style = "road"
+// }
 
-final case class UrbanBike() extends BikeStyle {
-  def style = "urbanBike"
-}
+// final case class MountainBike() extends BikeStyle {
+//   def style = "mountainBike"
+// }
+
+// final case class UrbanBike() extends BikeStyle {
+//   def style = "urbanBike"
+// }
 

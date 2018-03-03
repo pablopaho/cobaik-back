@@ -2,6 +2,7 @@ package co.com.cobaik.bikes.services
 
 import co.com.cobaik.bikes.categories.models.Category
 import co.com.cobaik.bikes.location.models.CobaikLocation
+import co.com.cobaik.bikes.json.objects.CreateAccesories
 
 import scala.concurrent.Future
 
@@ -23,8 +24,7 @@ trait BikesCommandsServices {
     * @param properties
     * @return Retorna el id de la bicicleta.
     */
-  def addBikeAccessories(bikeId: Int, properties: Map[String, String]): Future[Int]
-
+  def addBikeAccessories(bikeId: Int, createAccesories: CreateAccesories): Future[Int]
   /**
     *
     * @param bikeId

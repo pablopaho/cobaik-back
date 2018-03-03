@@ -15,7 +15,9 @@ import javax.inject._
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class BikesController @Inject()(bikesService: BikesQueriesServices, bikesCommandService: BikesCommandsServices)(implicit executionContext: ExecutionContext) extends Controller {
+class BikesController @Inject()(bikesService: BikesQueriesServices, bikesCommandService: BikesCommandsServices)
+                               (implicit executionContext: ExecutionContext) extends Controller {
+
   def bikes = Action.async {
     val bikes: Future[Seq[Bike]] = bikesService.bikes()
     bikes.map(result => Ok(Json.toJson(result)))
@@ -85,9 +87,9 @@ class BikesController @Inject()(bikesService: BikesQueriesServices, bikesCommand
     ???
   }
 
-  def addBikeAccessories(bikeId: Int): Action[CreateBike] = Action.async(parse.json[CreateBike]) { req =>
-    val accesories = req.body
-    //bikesCommandService.createBikeLocation()
-    ???
+  def addBikeAccessories(bikeId: Int): Action[CreateAccesories] = Action.async(parse.json[CreateAccesories]) { req =>
+    val createAccesories = req.body
+    val bikeIdF = bikesCommandService.addBikeAccessories(bikeId, createAccesories)
+    bikeIdF.map(bikeId => Ok(Json.toJson(bikeId)))
   }
 }
