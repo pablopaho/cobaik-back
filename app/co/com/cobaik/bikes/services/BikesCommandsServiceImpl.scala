@@ -6,8 +6,11 @@ import co.com.cobaik.bikes.categories.models.Category
 import co.com.cobaik.bikes.dao.BikesDAO
 import co.com.cobaik.bikes.location.models.CobaikLocation
 import co.com.cobaik.bikes.models.Bike
+import play.api.libs.Files.TemporaryFile
+import play.api.mvc.MultipartFormData.FilePart
 
 import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
 
 @Singleton
 class BikesCommandsServicesImpl @Inject() (bikesDao: BikesDAO) extends BikesCommandsServices {
@@ -15,7 +18,9 @@ class BikesCommandsServicesImpl @Inject() (bikesDao: BikesDAO) extends BikesComm
     bikesDao.insertBike(bike)
   }
 
-  def createBikeLocation(ownerId: Int, cobaikLocation: CobaikLocation): Future[Int] = ???
+  def createBikeLocation(ownerId: Int, cobaikLocation: CobaikLocation): Future[Int] = {
+    Future(1)
+  }
 
   /**
     *
@@ -40,7 +45,7 @@ class BikesCommandsServicesImpl @Inject() (bikesDao: BikesDAO) extends BikesComm
     * @param pictures
     * @return Retorna el id de la bicicleta.
     */
-  def addBikePhotos(bikeId: Int, pictures: List[Array[Byte]]): Future[Int] = ???
+  def addBikePhotos(bikeId: Int, pictures: List[FilePart[TemporaryFile]]): Future[Int] = Future(1)
 
   /**
     *
@@ -48,5 +53,5 @@ class BikesCommandsServicesImpl @Inject() (bikesDao: BikesDAO) extends BikesComm
     * @param content
     * @return
     */
-  def addBikeEngageInfo(bikeId: Int, content: String): Future[Int] = ???
+  def addBikeEngageInfo(bikeId: Int, content: String): Future[Int] = Future(1)
 }

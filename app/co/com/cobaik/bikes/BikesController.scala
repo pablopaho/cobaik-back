@@ -7,15 +7,16 @@ import co.com.cobaik.bikes.models.Bike
 import javax.inject._
 
 import play.api.libs.json.Json
-import co.com.cobaik.bikes.json.objects.{BikeDetail, BikeSearchDetail, BikesQuery}
+import co.com.cobaik.bikes.json.objects.{BikeDescription, BikeDetail, BikeSearchDetail, BikesQuery}
 import co.com.cobaik.bikes.location.json.objects.CreateBike
 import co.com.cobaik.bikes.location.models.CobaikLocation
+import play.api.libs.Files
 import play.api.mvc._
 
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class BikesController @Inject()(bikesService: BikesQueriesServices, bikesCommandService: BikesCommandsServices)(implicit executionContext: ExecutionContext) extends Controller {
+class BikesController @Inject()(bikesService: BikesQueriesServices,   bikesCommandService: BikesCommandsServices)(implicit executionContext: ExecutionContext) extends Controller {
   def bikes = Action.async {
     val bikes: Future[Seq[Bike]] = bikesService.bikes()
     bikes.map(result => Ok(Json.toJson(result)))
@@ -79,17 +80,21 @@ class BikesController @Inject()(bikesService: BikesQueriesServices, bikesCommand
     _bikeDetailF.map(result => Ok(Json.toJson(result)))
   }
 
-
-
-  def createBike: Action[CreateBike] = Action.async(parse.json[CreateBike]) { req =>
-    val bike: CreateBike = req.body
-    //bikesCommandService.createBikeLocation()
-    ???
+  def createBikeLocation(id: Int): Action[CreateBike] = Action.async(parse.json[CreateBike]) { req =>
+    val initialBikeInfo: CreateBike = req.body
+    val result = bikesCommandService.createBikeLocation(initialBikeInfo.ownerId, initialBikeInfo.cobaikLocation)
+    result.map(_result => Ok(Json.toJson(_result)))
   }
 
-  def createBikeAccessories: Action[CreateBike] = Action.async(parse.json[CreateBike]) { req =>
-    val bike: CreateBike = req.body
-    //bikesCommandService.createBikeLocation()
-    ???
+  def addBikeEngageInfo(id: Int): Action[BikeDescription] = Action.async(parse.json[BikeDescription]) { req =>
+    val bikeDescription: BikeDescription = req.body
+    val result = bikesCommandService.addBikeEngageInfo(bikeDescription.id, bikeDescription.description)
+    result.map(_result => Ok(Json.toJson(_result)))
+  }
+
+  def addBikePhotos(id: Int):Action[MultipartFormData[Files.TemporaryFile]] = Action.async(parse.multipartFormData) { request =>
+    val firstPhoto = request.body.file("firstPhoto")
+    val result = bikesCommandService.addBikePhotos(id, List(firstPhoto.get))
+    result.map(_result => Ok(Json.toJson(_result)))
   }
 }
