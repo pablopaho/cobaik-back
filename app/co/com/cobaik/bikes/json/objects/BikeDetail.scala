@@ -12,3 +12,4 @@ case class BikeSearchDetail(id: Int, brand: String, reference: String, categoryD
                             description: String)
 case class BikesQuery(location: CobaikLocation, start_date: Option[DateTime], end_date: Option[DateTime])
 
+case class BikeDescription(id: Int, description: String)
