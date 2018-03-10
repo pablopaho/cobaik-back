@@ -7,5 +7,5 @@ import scala.concurrent.Future
 
 
 trait CalendarCommandService {
-  def createAvailabilityOnCalendar(createAvailability: CreateAvailability): Future[List[Int]]
+  def createAvailabilityOnCalendar(createAvailability: CreateAvailability): Future[Int]
 }
