@@ -3,14 +3,20 @@
 # ~~~~
 
 # Bikes
-GET     /bikes                      co.com.cobaik.bikes.BikesController.bikes
-POST    /insert/bike                co.com.cobaik.bikes.BikesController.insertBike
-POST    /bikes/available            co.com.cobaik.bikes.BikesController.getAvailableBikes
-GET     /bikes/$id<[0-9]+>          co.com.cobaik.bikes.BikesController.getBikeDetail(id: Int)
-POST    /bikes                      co.com.cobaik.bikes.BikesController.createBike
+GET     /bikes                                            co.com.cobaik.bikes.BikesController.bikes
+POST    /insert/bike                                      co.com.cobaik.bikes.BikesController.insertBike
+POST    /bikes/available                                  co.com.cobaik.bikes.BikesController.getAvailableBikes
+GET     /bikes/$id<[0-9]+>                                co.com.cobaik.bikes.BikesController.getBikeDetail(id: Int)
+PUT     /bikes/$id<[0-9]+>/location                       co.com.cobaik.bikes.BikesController.createBikeLocation(id: Int)
+PUT     /bikes/$id<[0-9]+>/engage-info                    co.com.cobaik.bikes.BikesController.addBikeEngageInfo(id: Int)
+PUT     /bikes/$id<[0-9]+>/photos                         co.com.cobaik.bikes.BikesController.addBikePhotos(id: Int)
+PUT     /bikes/$bikeId<[0-9]+>/accesories                 co.com.cobaik.bikes.BikesController.addBikeAccessories(bikeId: Int)
+
 
 # Contact
-POST   /contact                    co.com.cobaik.communications.contact.ContactController.sendContact
+POST   /contact                                           co.com.cobaik.communications.contact.ContactController.sendContact
 
 # Owner
-POST /owner                         co.com.cobaik.users.owners.OwnersController.createOwner
+POST /owner                                               co.com.cobaik.users.owners.OwnersController.createOwner
+
+PUT /owner/$id<[0-9]+>/identification-photo               co.com.cobaik.users.owners.OwnersController.addOwnerIdentificationPicture(id: Int)
