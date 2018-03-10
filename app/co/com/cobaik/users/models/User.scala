@@ -11,7 +11,7 @@ sealed trait UserV2 {
 
 }
 
-final case class Owner() extends UserV2 {
+final case class OwnerV2() extends UserV2 {
   def id                  = ???
   def email               = ???
   def firstName           = ???
