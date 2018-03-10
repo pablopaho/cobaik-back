@@ -1,6 +1,5 @@
 package co.com.cobaik.calendar.models
 
-import co.com.cobaik.bikes.calendar.models.Slot
 import co.com.cobaik.bikes.models.Bike
 import co.com.cobaik.users.owners.models.Owner
 

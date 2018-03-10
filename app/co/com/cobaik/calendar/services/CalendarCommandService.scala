@@ -5,6 +5,6 @@ import co.com.cobaik.calendar.models.Availability
 import scala.concurrent.Future
 
 
-trait CalendarService {
+trait CalendarCommandService {
   def createAvailabilityOnCalendar(availability: Availability): Future[List[Int]]
 }

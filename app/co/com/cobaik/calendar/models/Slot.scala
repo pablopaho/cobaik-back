@@ -1,4 +1,4 @@
-package co.com.cobaik.bikes.calendar.models
+package co.com.cobaik.calendar.models
 
 import org.joda.time.DateTime
 

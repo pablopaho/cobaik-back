@@ -1,7 +1,7 @@
 package co.com.cobaik.journey.models
 
-import co.com.cobaik.bikes.calendar.models.Slot
 import co.com.cobaik.bikes.models.Bike
+import co.com.cobaik.calendar.models.Slot
 
 /**
   * Representa el viaje o el momento en cual se alquila una bicicleta de un owner a un ciclista, por un tiempo dado.
