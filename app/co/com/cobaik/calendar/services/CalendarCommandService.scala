@@ -1,10 +1,11 @@
 package co.com.cobaik.calendar.services
 
+import co.com.cobaik.calendar.json.objects.CreateAvailability
 import co.com.cobaik.calendar.models.Availability
 
 import scala.concurrent.Future
 
 
 trait CalendarCommandService {
-  def createAvailabilityOnCalendar(availability: Availability): Future[List[Int]]
+  def createAvailabilityOnCalendar(createAvailability: CreateAvailability): Future[List[Int]]
 }

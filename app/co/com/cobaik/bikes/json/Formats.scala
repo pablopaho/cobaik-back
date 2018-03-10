@@ -1,8 +1,8 @@
-package app.co.com.akku.bikes.json
+package co.com.cobaik.bikes.json
 
 import co.com.cobaik.bikes.json.objects.{BikeDescription, BikeDetail, BikeSearchDetail, BikesQuery}
 import co.com.cobaik.bikes.models.Bike
-import app.co.com.akku.bikes.location.json.Formats._
+import co.com.cobaik.bikes.location.json.Formats._
 import co.com.cobaik.bikes.location.json.objects.CreateBike
 import co.com.cobaik.bikes.json.objects.CreateAccesories
 import co.com.cobaik.bikes.models.{ BikeStyle, Frame, Group, Wheels }
