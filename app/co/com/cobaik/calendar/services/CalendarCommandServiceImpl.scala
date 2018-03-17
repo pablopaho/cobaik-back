@@ -1,8 +1,8 @@
 package co.com.cobaik.calendar.services
 
 import co.com.cobaik.bikes.models._
-import co.com.cobaik.calendar.json.objects.CreateAvailability
-import co.com.cobaik.calendar.models.{ Availability, Slot }
+import co.com.cobaik.calendar.json.objects.{CreateAvailability, CreateReservation}
+import co.com.cobaik.calendar.models.{Availability, Slot}
 import co.com.cobaik.users.owners.models.Owner
 import co.com.cobaik.users.services.UsersServiceProvider
 import org.joda.time.DateTime
@@ -23,9 +23,17 @@ trait CalendarCommandServiceImpl extends CalendarCommandService with UsersServic
       //TODO: no me cuadra el tema de que no tenemos id de availability
       val availability = Availability(owner, bike, List(slot1))
     }
-    
-    
     Future(1)
+  }
+
+  def createReservation(createReservation: CreateReservation): Future[Int] = {
+/*
+    for{
+      owner <- ???
+      bike <- ???
+
+    } */
+      ???
   }
 }
 
