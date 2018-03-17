@@ -1,11 +1,10 @@
 package co.com.cobaik.calendar.services
 
 import co.com.cobaik.bikes.models._
-
 import co.com.cobaik.bikes.services.BikesQueriesServicesProvider
-import co.com.cobaik.calendar.json.objects.{ CreateAvailability, CreateSlot, CreateReservation }
-import co.com.cobaik.calendar.models.{ Availability, Slot }
-
+import co.com.cobaik.calendar.json.objects.{CreateAvailability, CreateReservation, CreateSlot}
+import co.com.cobaik.calendar.models.{Availability, Reserve, Slot}
+import co.com.cobaik.users.cyclists.models.Cyclist
 import co.com.cobaik.users.owners.models.Owner
 import co.com.cobaik.users.services.UsersServiceProvider
 import org.joda.time.DateTime
@@ -28,14 +27,14 @@ trait CalendarCommandServiceImpl extends CalendarCommandService
     Future(1)
   }
 
-
   def createReservation(createReservation: CreateReservation): Future[Int] = {
-/*
     for{
-      owner <- ???
-      bike <- ???
-
-    } */
+      owner <- usersQueriesService.getOwner(createReservation.ownerId)
+      bike  <- bikesQueriesService.getBike(createReservation.bikeId)
+      cylcist <- Future(Cyclist(id = 1, user_id = 1)) // TODO crear query de ciclista
+    } yield {
+      val reservation = Reserve(bike,toSlots(createReservation.slots),cylcist,owner)
+    }
       ???
   }
 
@@ -43,9 +42,8 @@ trait CalendarCommandServiceImpl extends CalendarCommandService
     createSlots.map{ cs =>
       Slot(cs)
     }
-
   }
 }
 
-xxobject CalendarCommandServiceImpl extends CalendarCommandServiceImpl
+object CalendarCommandServiceImpl extends CalendarCommandServiceImpl
 
