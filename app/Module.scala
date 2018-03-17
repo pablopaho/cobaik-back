@@ -8,6 +8,8 @@ import com.google.inject.AbstractModule
 import net.codingwell.scalaguice.ScalaModule
 import java.time.Clock
 
+import com.google.inject.binder.ScopedBindingBuilder
+
 /**
  * This class is a Guice module that tells Guice how to bind several
  * different types. This Guice module is created when the Play
