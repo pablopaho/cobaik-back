@@ -23,3 +23,6 @@ PUT /owner/$id<[0-9]+>/identification-photo               co.com.cobaik.users.ow
 
 # calendar
 POST /calendar/availability                               co.com.cobaik.calendar.CalendarController.createAvailabilityOnCalendar
+
+# payment
+POST /payments                                            co.com.cobaik.payments.PaymentsController.createPayment

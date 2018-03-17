@@ -5,9 +5,6 @@ import org.joda.time.DateTime
 
 /**
   * Representa un espacio de tiempo.
-  *
-  * @param startDate
-  * @param endDate
   */
 trait Slot{
   def id: Int

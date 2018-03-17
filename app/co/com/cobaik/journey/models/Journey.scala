@@ -1,13 +1,28 @@
 package co.com.cobaik.journey.models
 
-import co.com.cobaik.bikes.models.Bike
+import co.com.cobaik.bikes.models.{Bike, BikeV2}
 import co.com.cobaik.calendar.models.Slot
+import co.com.cobaik.payments.models.Transaction
+import co.com.cobaik.users.cyclists.models.Cyclist
+import co.com.cobaik.users.owners.models.Owner
 
 /**
-  * Representa el viaje o el momento en cual se alquila una bicicleta de un owner a un ciclista, por un tiempo dado.
-  * asociada a un ciclista y a un dueño. Ej. Yo puedo decir que quiero alquilar x bicicleta todos los lunes por un mes.
-  * @param id
-  * @param bikeId
-  * @param reservations momento o momentos por los cuales reservo/rento la bici. Ej. Los lunes por un mes.
-  */
-case class Journey (id: Int, ownerId: Int, cyclistId: Int, bikeId: Int, reservations: List[Slot])
+  * Representa el viaje de a un ciclista, por un tiempo dado, asociada a un ciclista y a
+  * un dueño. Ej. Yo puedo decir que quiero alquilar x bicicleta todos los lunes por un
+  * mes.
+   */
+
+trait Journey {
+  def id: Int
+  def owner: Owner
+  def cyclist: Cyclist
+  def bike: BikeV2
+  def reservations: List[Slot]
+  def transaction: Transaction
+}
+case class BikeJourney(id: Int,
+                       owner: Owner,
+                       cyclist: Cyclist,
+                       bike: BikeV2,
+                       reservations: List[Slot],
+                       transaction:Transaction) extends Journey
