@@ -9,12 +9,6 @@ trait UsersQueriesServiceImpl extends UsersQueriesService {
 
   def getUser(id: Int): Future[User] = ???
 
-  def getOwner(id: Int): Future[Owner] = {
-    Future {
-      Owner(id = 1, user_id = 1)
-    }
-  }
-
 }
 
 object UsersQueriesServiceImpl extends UsersQueriesServiceImpl
