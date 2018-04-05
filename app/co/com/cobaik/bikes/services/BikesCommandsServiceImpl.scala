@@ -20,7 +20,7 @@ class BikesCommandsServicesImpl @Inject() (bikesDao: BikesDAO) extends BikesComm
   }
 
   def createBikeLocation(ownerId: Int, cobaikLocation: CobaikLocation): Future[Int] = {
-    Future(1)
+    Future(1)//retorna el id de la creacion de la bici
   }
 
   /**
@@ -40,7 +40,7 @@ class BikesCommandsServicesImpl @Inject() (bikesDao: BikesDAO) extends BikesComm
     */
   def addBikeAccessories(bikeId: Int, createAccesories: CreateAccesories): Future[Int] = {
     Future {
-      1
+      1 //retorna el id de la bici 
     }
   }
 

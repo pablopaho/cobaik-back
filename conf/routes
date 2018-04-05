@@ -1,6 +1,19 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
+# Rent a bike
+# 1. /bikes/available   --> Listar las bici disponibles para esa ubicacion
+# 2. /bikes/$id<[0-9]+> --> seleccionar una bici
+#
+# ~~~~
+# Registrer a bike
+# 1. /bikes/$id<[0-9]+>/location       --> ubica la bici (creo q este servicio debe crear una bici sin info)
+# 2. /bikes/$bikeId<[0-9]+>/accesories --> Registra la info de la bici
+# 3. /bikes/$id<[0-9]+>/photos         --> fotos de la bici
+# 4. /owner/$id<[0-9]+>/identification-photo --> info de pasaporte o cedula
+# 5. /bikes/$id<[0-9]+>/engage-info    --> info de lo que se puede hacer en la bici
+# 6. /calendar/availability            --> asigna disponibilidad a la bici
+
 
 # Bikes
 GET     /bikes                                            co.com.cobaik.bikes.BikesController.bikes
