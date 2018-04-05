@@ -1,13 +1,12 @@
 package co.com.cobaik.calendar
 
-import javax.inject.Inject
-
-import co.com.cobaik.calendar.json.objects.CreateAvailability
+import co.com.cobaik.calendar.json.objects.{CreateAvailability, CreateReservation}
 import co.com.cobaik.calendar.services.CalendarProviderService
 import co.com.cobaik.calendar.json.Formats._
+
 import play.api.libs.json.Json
 import play.api.mvc._
-
+import javax.inject.Inject
 import scala.concurrent.{ExecutionContext}
 
 
@@ -21,4 +20,11 @@ class CalendarController @Inject()(implicit executionContext: ExecutionContext) 
     val resultF = calendarCommandService.createAvailabilityOnCalendar(createAvailability)
     resultF.map(el => Ok(Json.toJson(el)))
   }
+
+  def createReservationOnCalendar(): Action[CreateReservation] = Action.async(parse.json[CreateReservation]) { req =>
+    val createReservation = req.body
+    val resultF = calendarCommandService.createReservationOnCalendar(createReservation)
+    resultF.map(el => Ok(Json.toJson(el)))
+  }
+
 }

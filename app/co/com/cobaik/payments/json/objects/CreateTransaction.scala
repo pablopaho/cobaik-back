@@ -1,8 +1,10 @@
 package co.com.cobaik.payments.json.objects
 
+import co.com.cobaik.calendar.models.Slot
 
-case class CreateTransactionBike (taxesPayment: Float,
-                            paymentValue: Float,
-                            cyclistId: Int,
-                            ownerId: Int,
-                            bikeId: Int)
+case class CreateTransactionBike (cyclistId    : Int,
+                                  ownerId      : Int,
+                                  bikeId       : Int,
+                                  paymentValue : Float,
+                                  taxesPayment : Float,
+                                  reservations : List[Slot])

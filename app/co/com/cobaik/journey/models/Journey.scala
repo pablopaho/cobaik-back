@@ -7,7 +7,7 @@ import co.com.cobaik.users.cyclists.models.Cyclist
 import co.com.cobaik.users.owners.models.Owner
 
 /**
-  * Representa el viaje de a un ciclista, por un tiempo dado, asociada a un ciclista y a
+  * RepresentaJourneysServiceProvider el viaje de a un ciclista, por un tiempo dado, asociada a un ciclista y a
   * un dueño. Ej. Yo puedo decir que quiero alquilar x bicicleta todos los lunes por un
   * mes.
    */

@@ -2,8 +2,10 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 # Rent a bike
-# 1. /bikes/available   --> Listar las bici disponibles para esa ubicacion
-# 2. /bikes/$id<[0-9]+> --> seleccionar una bici
+# 1. /bikes/available      --> Listar las bici disponibles para esa ubicacion
+# 2. /bikes/$id<[0-9]+>    --> seleccionar una bici
+# 3. /calendar/reservation --> reservar una bici (creo q este no se usa, porque se realiza cuando se paga)
+# 4. /payments
 #
 # ~~~~
 # Registrer a bike
@@ -36,6 +38,8 @@ PUT /owner/$id<[0-9]+>/identification-photo               co.com.cobaik.users.ow
 
 # calendar
 POST /calendar/availability                               co.com.cobaik.calendar.CalendarController.createAvailabilityOnCalendar
+POST /calendar/reservation                                co.com.cobaik.calendar.CalendarController.createReservationOnCalendar
+
 
 # payment
 POST /payments                                            co.com.cobaik.payments.PaymentsController.createPayment

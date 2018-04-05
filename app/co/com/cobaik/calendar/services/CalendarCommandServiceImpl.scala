@@ -29,7 +29,7 @@ trait CalendarCommandServiceImpl extends CalendarCommandService
     Future(1)
   }
 
-  def createReservation(createReservation: CreateReservation): Future[Int] = {
+  def createReservationOnCalendar(createReservation: CreateReservation): Future[Int] = {
     for{
       owner <- ownersQueriesService.getOwner(createReservation.ownerId)
       bike  <- bikesQueriesService.getBike(createReservation.bikeId)

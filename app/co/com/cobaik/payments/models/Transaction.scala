@@ -10,7 +10,8 @@ trait Transaction {
   def bikeId: Int
 }
 
-case class TransactionBike (id: Int, taxesPayment: Float,
+case class TransactionBike (id: Int,
+                            taxesPayment: Float,
                             paymentValue: Float,
                             cyclistId: Int,
                             ownerId: Int,
